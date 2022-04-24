@@ -27,78 +27,71 @@ public class TV {
 	public boolean isPower() {
 		return power;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	//메소드 일반
 	
 	public void power(boolean on) {
 		if(on==true) {
-			System.out.println("TV를 켭니다.");
 			this.power=true;
 		}else {
-			System.out.println("TV를 끕니다.");
 			this.power=false;
 			
 		}
 	}
 	
 	
-	void channel( int channel ) {//메소드 구현 (1~255 유지)
-		if(1<=channel && channel<=255) {
-			System.out.println(channel);
+	public void channel( int channel ) {//메소드 구현 (1~255 유지)
+		if(channel>=255) {
+			//System.out.println(channel);
+			this.channel = 255;
+		}else if(channel<=1) {
+			this.channel = 1;
+			//System.out.println(channel);
+		}
+	}
+	
+	
+	/////
+	public void channel(boolean up) {
+		if(up==true) {
+			this.channel += 1;
 		}else {
-			this.channel=255;
-			System.out.println(channel);
+			this.channel-=1;
 		}
 	}
 	
 	
 	
-	void channel( boolean up ) { //메소드 오버로딩 (1~255 유지, 1씩 증감)
-		while(true) {
-			if(1<=channel && channel<255) {
-				channel++;
-				System.out.println(channel);
-			}else {return;}
-		}
-	}
-	
-	
-	
-	void volume( int volume ) { //메소드 구현 ( 0 ~ 100 유지 )
-		if(0<=volume && volume<=100) {
-			System.out.println(volume);
-		}else {
+	public void volume( int volume ) { //메소드 구현 ( 0 ~ 100 유지 )
+		if(volume>=100) {
 			this.volume=100;
-			System.out.println(volume);
+			//System.out.println(volume);
+		}else if(volume<=0){
+			this.volume=0;
+			//System.out.println(volume);
 		}
 	} 
-	void volume( boolean up ) { //메소드 오버로딩 (0 ~ 100 유지, 1씩 증감)
-		while(true) {
-			if(0<=volume && volume<100) {
-				volume++;
-				System.out.println(volume);
-			}else {return;}
+	public void volume( boolean up ) { //메소드 오버로딩 (0 ~ 100 유지, 1씩 증감)
+		if(up==true) {
+			this.volume +=1;
+		}else {
+			this.volume-=1;
 		}
 	}
 	
 	
-	void status() {
-		System.out.println("현재 채널: " + channel + " 소리: " + volume + " " + power);
+	public void status() {
+		//System.out.println("현재 채널: " + channel + " 소리: " + volume + " " + power);
+		if(power==false) {
+			System.out.println("TV OFF");
+		}else {
+			System.out.println("TV ON");
+			System.out.println("현재 채널: " + channel);
+			System.out.println("현재 볼륨: " + volume);
+		}
+		
 	}
-
-
-
-
 
 }
 	
