@@ -1,7 +1,13 @@
 package com.javaex.ex10;
 
+//static 사전조사
+	
 public class GoodsApp {
-	//static 사전조사
+	//필드
+	//생성자
+	//메소드 gs
+	//메소드 일반
+	
 	public static void main(String[] args) {
 		
 		Goods camera = new Goods("니콘", 400000);

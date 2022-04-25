@@ -8,10 +8,10 @@ public class Math {
 	//public Math() {}
 	
 	
-	
 	//메소드 gs
 	
 	//메소드 일반
+	
 	public int plus(int a, int b) { //정수+정수
 		return a+b;
 	}
@@ -24,6 +24,6 @@ public class Math {
 	public double plus(double a, double b) { //실수+실수
 		return a+b;
 	}
-
+	
 
 }
